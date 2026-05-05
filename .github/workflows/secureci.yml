@@ -26,4 +26,4 @@ jobs:
 
       - name: Run SecureCI Checks
         run: |
-          python -c "print('SecureCI pipeline executed successfully')"
+          python pipeline_check.py
