@@ -1,0 +1,26 @@
+[
+    {
+        "timestamp": "2026-05-05 17:54:33",
+        "risk_score": 50,
+        "decision": "Warn",
+        "policy_status": "Deployment Allowed with Warning"
+    },
+    {
+        "timestamp": "2026-05-05 17:55:24",
+        "risk_score": 0,
+        "decision": "Allow",
+        "policy_status": "Deployment Approved"
+    },
+    {
+        "timestamp": "2026-05-05 17:55:29",
+        "risk_score": 50,
+        "decision": "Warn",
+        "policy_status": "Deployment Allowed with Warning"
+    },
+    {
+        "timestamp": "2026-05-05 18:05:25",
+        "risk_score": 50,
+        "decision": "Warn",
+        "policy_status": "Deployment Allowed with Warning"
+    }
+]

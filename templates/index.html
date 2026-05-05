@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureCI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>SecureCI</h1>
+        <p class="subtitle">Software Supply Chain Security Scanner</p>
+
+        <form action="{{ url_for('scan') }}" method="POST" enctype="multipart/form-data" class="upload-box">
+            <input type="file" name="file" required>
+            <button type="submit">Scan Dependencies</button>
+        </form>
+
+        {% if results %}
+        <div class="results">
+            <h2>Scan Results</h2>
+
+            <div class="filter-box">
+                <input type="text" id="searchInput" placeholder="Search package..." onkeyup="filterTable()">
+                
+                <select id="severityFilter" onchange="filterTable()">
+                    <option value="">All Severities</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+
+            <table id="scanTable">
+                <tr>
+                    <th>Package</th>
+                    <th>Status</th>
+                    <th>Severity</th>
+                </tr>
+                {% for item in results %}
+                <tr>
+                    <td>{{ item.package }}</td>
+                    <td>{{ item.status }}</td>
+                    <td>
+                        <span class="{% if item.severity == 'High' %}severity-high{% elif item.severity == 'Medium' %}severity-medium{% else %}severity-low{% endif %}">
+                            {{ item.severity }}
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Risk Score</h3>
+                    <p>{{ risk_score }}</p>
+                </div>
+
+                <div class="card">
+                    <h3>Deployment Decision</h3>
+                    <p class="{% if decision == 'Allow' %}allow{% elif decision == 'Warn' %}warn{% else %}block{% endif %}">
+                        {{ decision }}
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Policy Enforcement</h3>
+                    <p>{{ policy_status }}</p>
+                </div>
+            </div>
+
+            <div class="summary">
+                <h3>SBOM (Software Bill of Materials)</h3>
+                <table>
+                    <tr>
+                        <th>Package</th>
+                        <th>Version</th>
+                    </tr>
+                    {% for item in sbom %}
+                    <tr>
+                        <td>{{ item.package }}</td>
+                        <td>{{ item.version }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+            <div class="summary">
+                <h3>Security Report</h3>
+                <p>Security report generated successfully and saved in <strong>reports/scan_report.json</strong></p>
+            </div>
+
+            <div class="summary">
+                <h3>Download Security Report</h3>
+                <a href="{{ url_for('download_report') }}" class="download-btn">Download JSON Report</a>
+            </div>
+
+            <div class="summary">
+                <h3>Download PDF Report</h3>
+                <a href="{{ url_for('download_pdf') }}" class="download-btn">Download PDF Report</a>
+            </div>
+
+            {% if history %}
+            <div class="summary">
+                <h3>Scan History</h3>
+                <table>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Risk Score</th>
+                        <th>Decision</th>
+                        <th>Policy</th>
+                    </tr>
+                    {% for item in history %}
+                    <tr>
+                        <td>{{ item.timestamp }}</td>
+                        <td>{{ item.risk_score }}</td>
+                        <td>{{ item.decision }}</td>
+                        <td>{{ item.policy_status }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+    function filterTable() {
+        let input = document.getElementById("searchInput").value.toLowerCase();
+        let filter = document.getElementById("severityFilter").value;
+        let table = document.getElementById("scanTable");
+        let rows = table.getElementsByTagName("tr");
+
+        for (let i = 1; i < rows.length; i++) {
+            let packageName = rows[i].getElementsByTagName("td")[0].innerText.toLowerCase();
+            let severity = rows[i].getElementsByTagName("td")[2].innerText.trim();
+
+            let matchesSearch = packageName.includes(input);
+            let matchesSeverity = filter === "" || severity === filter;
+
+            rows[i].style.display = (matchesSearch && matchesSeverity) ? "" : "none";
+        }
+    }
+    </script>
+</body>
+</html>

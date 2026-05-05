@@ -1,0 +1,170 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 75%;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    color: #1f4e79;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.upload-box {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+input[type="file"] {
+    padding: 8px;
+}
+
+button {
+    padding: 10px 18px;
+    border: none;
+    background: #1f4e79;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #163a5c;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background: #1f4e79;
+    color: white;
+}
+
+.summary {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8fbff;
+    border-left: 5px solid #1f4e79;
+    border-radius: 10px;
+}
+
+.cards {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.card {
+    flex: 1;
+    background: #f8fbff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+    text-align: center;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #1f4e79;
+}
+
+.card p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.allow {
+    color: green;
+    font-weight: bold;
+}
+
+.warn {
+    color: orange;
+    font-weight: bold;
+}
+
+.block {
+    color: red;
+    font-weight: bold;
+}
+
+.severity-high {
+    background: #ffe5e5;
+    color: red;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.severity-medium {
+    background: #fff4e5;
+    color: orange;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.severity-low {
+    background: #e8f8ec;
+    color: green;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.download-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 18px;
+    background: #1f4e79;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.download-btn:hover {
+    background: #163a5c;
+}
+.filter-box {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.filter-box input,
+.filter-box select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
