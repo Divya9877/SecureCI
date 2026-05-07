@@ -22,7 +22,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install Dependencies
-        run: pip install flask reportlab
+        run: pip install flask reportlab requests
 
       - name: Run SecureCI Checks
         run: |
