@@ -1,0 +1,11 @@
+---
+- name: Deploy SecureCI
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Build Docker image
+      command: docker build -t secureci .
+
+    - name: Run SecureCI container
+      command: docker run -d -p 8000:5000 secureci

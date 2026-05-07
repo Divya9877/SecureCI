@@ -124,5 +124,23 @@
         "risk_score": 40,
         "decision": "Warn",
         "policy_status": "Deployment Allowed with Warning"
+    },
+    {
+        "timestamp": "2026-05-07 12:48:31",
+        "risk_score": 40,
+        "decision": "Warn",
+        "policy_status": "Deployment Allowed with Warning"
+    },
+    {
+        "timestamp": "2026-05-07 12:49:21",
+        "risk_score": 40,
+        "decision": "Warn",
+        "policy_status": "Deployment Allowed with Warning"
+    },
+    {
+        "timestamp": "2026-05-07 12:52:04",
+        "risk_score": 40,
+        "decision": "Warn",
+        "policy_status": "Deployment Allowed with Warning"
     }
 ]
