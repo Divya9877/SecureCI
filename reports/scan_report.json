@@ -6,17 +6,7 @@
             "severity": "Low"
         },
         {
-            "package": "requests",
-            "status": "Safe",
-            "severity": "Low"
-        },
-        {
             "package": "numpy",
-            "status": "Safe",
-            "severity": "Low"
-        },
-        {
-            "package": "django",
             "status": "Safe",
             "severity": "Low"
         },
@@ -24,31 +14,32 @@
             "package": "pandas",
             "status": "Safe",
             "severity": "Low"
+        },
+        {
+            "package": "jinja2",
+            "status": "Safe",
+            "severity": "Low"
         }
     ],
-    "risk_score": 50,
+    "risk_score": 40,
     "deployment_decision": "Warn",
     "policy_enforcement": "Deployment Allowed with Warning",
     "sbom": [
         {
             "package": "flask",
-            "version": "2.0.1"
-        },
-        {
-            "package": "requests",
-            "version": "2.25.1"
+            "version": "3.1.3"
         },
         {
             "package": "numpy",
-            "version": "1.21.0"
-        },
-        {
-            "package": "django",
-            "version": "3.2"
+            "version": "2.3.1"
         },
         {
             "package": "pandas",
-            "version": "1.3.0"
+            "version": "2.3.2"
+        },
+        {
+            "package": "jinja2",
+            "version": "3.1.6"
         }
     ]
 }

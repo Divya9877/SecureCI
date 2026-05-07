@@ -22,5 +22,107 @@
         "risk_score": 50,
         "decision": "Warn",
         "policy_status": "Deployment Allowed with Warning"
+    },
+    {
+        "timestamp": "2026-05-05 18:43:49",
+        "risk_score": 50,
+        "decision": "Warn",
+        "policy_status": "Deployment Allowed with Warning"
+    },
+    {
+        "timestamp": "2026-05-05 18:48:06",
+        "risk_score": 130,
+        "decision": "Block",
+        "policy_status": "Deployment Blocked"
+    },
+    {
+        "timestamp": "2026-05-05 18:50:55",
+        "risk_score": 130,
+        "decision": "Block",
+        "policy_status": "Deployment Blocked"
+    },
+    {
+        "timestamp": "2026-05-05 18:51:11",
+        "risk_score": 130,
+        "decision": "Block",
+        "policy_status": "Deployment Blocked"
+    },
+    {
+        "timestamp": "2026-05-05 18:51:58",
+        "risk_score": 130,
+        "decision": "Block",
+        "policy_status": "Deployment Blocked"
+    },
+    {
+        "timestamp": "2026-05-05 18:55:30",
+        "risk_score": 110,
+        "decision": "Block",
+        "policy_status": "Deployment Blocked"
+    },
+    {
+        "timestamp": "2026-05-07 10:22:48",
+        "risk_score": 110,
+        "decision": "Block",
+        "policy_status": "Deployment Blocked"
+    },
+    {
+        "timestamp": "2026-05-07 10:25:52",
+        "risk_score": 110,
+        "decision": "Block",
+        "policy_status": "Deployment Blocked"
+    },
+    {
+        "timestamp": "2026-05-07 10:41:40",
+        "risk_score": 0,
+        "decision": "Allow",
+        "policy_status": "Deployment Approved"
+    },
+    {
+        "timestamp": "2026-05-07 10:41:53",
+        "risk_score": 0,
+        "decision": "Allow",
+        "policy_status": "Deployment Approved"
+    },
+    {
+        "timestamp": "2026-05-07 10:42:27",
+        "risk_score": 110,
+        "decision": "Block",
+        "policy_status": "Deployment Blocked"
+    },
+    {
+        "timestamp": "2026-05-07 10:43:27",
+        "risk_score": 110,
+        "decision": "Block",
+        "policy_status": "Deployment Blocked"
+    },
+    {
+        "timestamp": "2026-05-07 10:44:53",
+        "risk_score": 110,
+        "decision": "Block",
+        "policy_status": "Deployment Blocked"
+    },
+    {
+        "timestamp": "2026-05-07 10:45:38",
+        "risk_score": 100,
+        "decision": "Block",
+        "policy_status": "Deployment Blocked"
+    },
+    {
+        "timestamp": "2026-05-07 10:47:57",
+        "risk_score": 100,
+        "decision": "Block",
+        "policy_status": "Deployment Blocked"
+    },
+    {
+        "timestamp": "2026-05-07 10:48:33",
+        "risk_score": 70,
+        "decision": "Block",
+        "policy_status": "Deployment Blocked"
+    },
+    {
+        "timestamp": "2026-05-07 10:49:29",
+        "risk_score": 40,
+        "decision": "Warn",
+        "policy_status": "Deployment Allowed with Warning"
     }
 ]
