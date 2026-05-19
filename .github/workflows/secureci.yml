@@ -26,7 +26,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install Dependencies
-        run: pip install flask reportlab requests prometheus_client
+        run: pip install flask reportlab
 
       - name: Run SecureCI Checks
         run: |
