@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN pip install flask requests reportlab prometheus_client
+RUN pip install -r requirements.txt
 
 EXPOSE 5000
 

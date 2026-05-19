@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1 class="page-title">
+        Scan Results
+    </h1>
+
+    <!-- ===================== -->
+    <!-- RESULTS TABLE -->
+    <!-- ===================== -->
+
+    <table>
+
+        <tr>
+
+            <th>Package</th>
+
+            <th>Status</th>
+
+            <th>Severity</th>
+
+            <th>CVE ID</th>
+
+        </tr>
+
+        {% for item in results %}
+
+        <tr>
+
+            <td>
+                {{ item.package }}
+            </td>
+
+            <td>
+
+                {% if item.status == "Vulnerable" %}
+
+                    <span class="block">
+                        Vulnerable
+                    </span>
+
+                {% else %}
+
+                    <span class="allow">
+                        Safe
+                    </span>
+
+                {% endif %}
+
+            </td>
+
+            <td>
+
+                <span class="
+                {% if item.severity == 'High' %}
+                    severity-high
+                {% elif item.severity == 'Medium' %}
+                    severity-medium
+                {% else %}
+                    severity-low
+                {% endif %}
+                ">
+
+                    {{ item.severity }}
+
+                </span>
+
+            </td>
+
+            <td>
+
+                {{ item.cve if item.cve else "N/A" }}
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <!-- ===================== -->
+    <!-- SUMMARY CARDS -->
+    <!-- ===================== -->
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>
+                Risk Score
+            </h3>
+
+            <p>
+                {{ risk_score }}
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Deployment Decision
+            </h3>
+
+            <p class="
+            {% if decision == 'Allow' %}
+                allow
+            {% elif decision == 'Warn' %}
+                warn
+            {% else %}
+                block
+            {% endif %}
+            ">
+
+                {{ decision }}
+
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Policy Status
+            </h3>
+
+            <p>
+                {{ policy_status }}
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ===================== -->
+    <!-- SBOM -->
+    <!-- ===================== -->
+
+    <div class="summary">
+
+        <h2>
+            SBOM (Software Bill of Materials)
+        </h2>
+
+        <table>
+
+            <tr>
+
+                <th>Package</th>
+
+                <th>Version</th>
+
+            </tr>
+
+            {% for item in sbom %}
+
+            <tr>
+
+                <td>
+                    {{ item.package }}
+                </td>
+
+                <td>
+                    {{ item.version }}
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+    <!-- ===================== -->
+    <!-- REPORT DOWNLOAD -->
+    <!-- ===================== -->
+
+    <div class="summary">
+
+        <h2>
+            Download Reports
+        </h2>
+
+        <a href="/download-report"
+           class="download-btn">
+
+            Download JSON Report
+
+        </a>
+
+        <a href="/download-pdf"
+           class="download-btn">
+
+            Download PDF Report
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

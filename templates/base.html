@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        SecureCI | DevSecOps Security Scanner
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- NAVBAR -->
+    <!-- ========================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            SecureCI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/history">
+                History
+            </a>
+
+            <a href="/reports">
+                Reports
+            </a>
+
+            <a href="/about">
+                About
+            </a>
+
+        </div>
+
+    </nav>
+
+    <!-- ========================= -->
+    <!-- PAGE CONTENT -->
+    <!-- ========================= -->
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+
+</html>

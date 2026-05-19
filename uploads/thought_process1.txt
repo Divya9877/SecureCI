@@ -1,0 +1,33 @@
+Problem: 2461. Maximum Sum of Distinct Subarrays With Length K
+
+Approach:
+We use the Sliding Window technique to solve this problem efficiently.
+
+A window of size k is maintained while traversing the array.
+We keep track of:
+1. Current window sum
+2. Frequency of elements using a HashMap
+
+Steps:
+1. Add the current element to the window sum.
+2. Store/update its frequency in the HashMap.
+3. If the window size becomes greater than k:
+   - Remove the leftmost element from the sum.
+   - Decrease its frequency in the HashMap.
+   - Remove it completely if frequency becomes 0.
+4. If:
+   - window size == k
+   - all elements are distinct
+     (HashMap size == k)
+   then update the maximum sum.
+
+Why this works:
+The sliding window helps process each element only once,
+making the solution efficient.
+The HashMap ensures that all elements in the current window are distinct.
+
+Time Complexity:
+O(n)
+
+Space Complexity:
+O(k)

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2>Scan History</h2>
+
+    <table>
+
+        <tr>
+
+            <th>Timestamp</th>
+            <th>Risk Score</th>
+            <th>Decision</th>
+            <th>Policy</th>
+
+        </tr>
+
+        {% for item in history %}
+
+        <tr>
+
+            <td>{{ item.timestamp }}</td>
+
+            <td>{{ item.risk_score }}</td>
+
+            <td>{{ item.decision }}</td>
+
+            <td>{{ item.policy_status }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+{% endblock %}

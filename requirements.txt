@@ -1,2 +1,6 @@
 flask
-safety
+requests
+reportlab
+prometheus_client
+pymongo
+gunicorn

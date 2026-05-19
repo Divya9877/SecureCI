@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1 class="page-title">
+        About SecureCI
+    </h1>
+
+    <p class="about-text">
+
+        SecureCI is an intelligent
+        Software Supply Chain Security
+        Scanner designed to identify
+        vulnerable dependencies before
+        software deployment.
+
+    </p>
+
+    <div class="about-grid">
+
+        <div class="about-card">
+
+            <h2>
+                Project Goal
+            </h2>
+
+            <p>
+
+                The main goal of SecureCI
+                is to improve DevSecOps
+                security by automatically
+                scanning third-party
+                dependencies and preventing
+                risky deployments in CI/CD
+                pipelines.
+
+            </p>
+
+        </div>
+
+        <div class="about-card">
+
+            <h2>
+                Key Features
+            </h2>
+
+            <ul>
+
+                <li>
+                    Dependency Vulnerability Scanning
+                </li>
+
+                <li>
+                    Risk Score Calculation
+                </li>
+
+                <li>
+                    Policy-Based Deployment Blocking
+                </li>
+
+                <li>
+                    SBOM Generation
+                </li>
+
+                <li>
+                    Prometheus + Grafana Monitoring
+                </li>
+
+                <li>
+                    MongoDB Scan History
+                </li>
+
+                <li>
+                    Postman API Testing
+                </li>
+
+                <li>
+                    CI/CD Integration
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="about-card">
+
+            <h2>
+                Technologies Used
+            </h2>
+
+            <ul>
+
+                <li>
+                    Flask
+                </li>
+
+                <li>
+                    Python
+                </li>
+
+                <li>
+                    MongoDB
+                </li>
+
+                <li>
+                    Docker
+                </li>
+
+                <li>
+                    GitHub Actions
+                </li>
+
+                <li>
+                    Prometheus
+                </li>
+
+                <li>
+                    Grafana
+                </li>
+
+                <li>
+                    Ansible
+                </li>
+
+                <li>
+                    HTML / CSS
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="about-card">
+
+            <h2>
+                Workflow
+            </h2>
+
+            <p>
+
+                Users upload dependency
+                files or manually enter
+                dependencies. SecureCI scans
+                packages, detects vulnerable
+                libraries, calculates risk,
+                applies deployment policies,
+                generates reports, stores
+                scan history in MongoDB,
+                and exposes monitoring
+                metrics to Grafana dashboards.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
